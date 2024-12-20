@@ -4,6 +4,9 @@ const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql2/promise");
 
+// configuro para poder usar variables de entorno
+require("dotenv").config();
+
 // mi servidor
 
 const api = express();
@@ -17,7 +20,7 @@ async function getDBConection() {
         host: "kbp1t.h.filess.io",
         port: 3306,
         user: "faerie_swimmingin",
-        password: "c7494abdf0f8bb6da87b0901c03044d5380a23ae",
+        password: process.env.PASSWORD_DB,
         database: "faerie_swimmingin"
     });
     connection.connect();
