@@ -67,6 +67,18 @@ api.get("/api/personajes", async (req, res) => {
     });
 })
 
+//info de cortes
+api.get("/api/cortes", async (req, res) => {
+    const connection = await getDBConection();
+    const query = "SELECT * FROM Cortes";
+    const [result] = await connection.query(query)
+    connection.end();
+    res.status(200).json({
+        success: true,
+        result: result
+    });
+})
+
 //buscar un solo personaje por id
 
 api.get("/api/personajes/:id", async (req, res) => {

@@ -42,6 +42,17 @@ CREATE TABLE Cortes (
     
     SELECT * FROM Personajes INNER JOIN Cortes ON Cortes.Id_Corte = Personajes.fk_corte;
 
+    SELECT 
+        Personajes.Id_Personaje,
+        Personajes.Nombre AS Nombre_Personaje,
+        Personajes.Raza,
+        Personajes.Descripción,
+        Cortes.Nombre AS Nombre_Corte
+    FROM Personajes 
+    INNER JOIN Cortes ON Cortes.Id_Corte = Personajes.fk_corte;
+
+    SELECT * FROM Cortes;
+    
     INSERT INTO Personajes(Nombre, Raza, Descripción) VALUES ('Madoc', 'Fae', 'Padre adoptivo de Jude, gorro rojo');
 
     UPDATE Personajes SET Nombre = 'Madoc', Raza = 'Fae', Descripción = 'Padre adoptivo de Jude, Taryn y Oak. Gorro rojo' WHERE Id_Personaje = 11;
