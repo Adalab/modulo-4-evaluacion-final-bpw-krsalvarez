@@ -39,9 +39,17 @@ Para crear esta API he utilizado:
    - Ruta ```http://localhost:4005/api/personajes```
    - Descripción: Devuelve una lista de todos los personajes y las cortes a las que pertenecen
    - Un ejemplo de la respuesta:
-    | | | | | | | |
-|-|-|-|-|-|-|-|
-|status|message| | | | | |
-| |Id_Personaje|Nombre|Raza|Descripción|Id_Corte|Nombre_Corte|
-|success|1|Nombre del Personaje|Raza del Personaje|Descripción del Personaje|1|Nombre de la Corte|
+      `{
+  "status": "success",
+  "message": [
+    {
+      "Id_Personaje": 1,
+      "Nombre": "Nombre del Personaje",
+      "Raza": "Raza del Personaje",
+      "Descripción": "Descripción del Personaje",
+      "Id_Corte": 1,
+      "Nombre_Corte": "Nombre de la Corte"
+    }
+  ]
+}`
 
