@@ -94,7 +94,12 @@ api.post("/api/personajes", async (req, res) => {
     console.log(req.body);
 
     const { Nombre, Raza, Descripción } = req.body;
-
+    if (!Nombre || !Raza || !Descripción) {
+        res.status(400).json({
+            success: false,
+            message: "Missing fields"
+        })
+    } else {
     const connection = await getDBConection();
     const query = "INSERT INTO Personajes(Nombre, Raza, Descripción) VALUES (?, ?, ?)";
     const [result] = await connection.query(query, [Nombre, Raza, Descripción]);
@@ -103,7 +108,8 @@ api.post("/api/personajes", async (req, res) => {
     res.status(201).json({
         success: true,
         id: result.insertId
-    });
+        });
+    }
 })
 
 // actualizar los datos de un personaje
@@ -122,6 +128,12 @@ api.put("/api/personajes/:id", async (req, res) => {
 const id = req.params.id;
 const { Nombre, Raza, Descripción } = req.body;
 
+if (!id) {
+    res.status(400).json({
+        success: false,
+        message: "Falta el id del personaje que quieres modificar"
+    })
+} else {
 const connection = await getDBConection();
 const query = "UPDATE Personajes SET Nombre = ?, Raza = ?, Descripción = ? WHERE Id_Personaje = ?";
 const [result] = await connection.query(query, [
@@ -130,6 +142,7 @@ const [result] = await connection.query(query, [
 connection.end();
 
 res.status(200).json({ success: true });
+    }
 })
 
 //eliminar personaje
