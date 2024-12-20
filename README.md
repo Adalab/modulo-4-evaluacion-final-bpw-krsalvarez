@@ -39,7 +39,7 @@ Para crear esta API he utilizado:
    - Ruta ```http://localhost:4005/api/personajes```
    - Descripción: Devuelve una lista de todos los personajes y las cortes a las que pertenecen
    - Un ejemplo de la respuesta:
-      `{
+      ```json {
   "status": "success",
   "message": [
     {
@@ -51,5 +51,5 @@ Para crear esta API he utilizado:
       "Nombre_Corte": "Nombre de la Corte"
     }
   ]
-}`
+}
 
