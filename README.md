@@ -38,18 +38,14 @@ Para crear esta API he utilizado:
 1. **Listar todos los personajes con sus cortes**
    - Ruta ```http://localhost:4005/api/personajes```
    - Descripción: Devuelve una lista de todos los personajes y las cortes a las que pertenecen
-   - Un ejemplo de la respuesta:
-      ``` {
-  "status": "success",
-  "message": [
-    {
-      "Id_Personaje": 1,
-      "Nombre": "Nombre del Personaje",
-      "Raza": "Raza del Personaje",
-      "Descripción": "Descripción del Personaje",
-      "Id_Corte": 1,
-      "Nombre_Corte": "Nombre de la Corte"
-    }
-  ]
-}```
+2. **Actualizar un personaje**
+   - Ruta: ```http://localhost:4005/api/personajes/:id```
+   - Descripción: Permite actualizar los datos de un personaje existente.
+3. **Añadir un personaje nuevo**
+   - Ruta ```http://localhost:4005/api/personajes```
+   - Descripción: Permite añadir un personaje nuevo.
+4. Eliminar un personaje
+   - Ruta ```http://localhost:4005/api/personajes/:id```
+   - Descripción: Elimina un personaje en específico por su ID.
 
+¡Espero que te sea de utilidad! 
